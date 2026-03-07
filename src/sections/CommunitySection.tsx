@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Quote, Building2, GraduationCap, ShoppingBag } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const testimonials = [
   {
     quote: "The cleanest lettuce we've ever sourced—year-round, local, consistent.",

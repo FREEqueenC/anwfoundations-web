@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Sprout, Shield, Leaf } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface CropData {
   id: string;
   name: string;

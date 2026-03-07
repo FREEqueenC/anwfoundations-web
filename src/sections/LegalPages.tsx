@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface LegalPageProps {
   onBack: () => void;
 }
