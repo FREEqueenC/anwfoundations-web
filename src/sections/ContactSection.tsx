@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Mail, Palette, Wrench, Headphones } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);

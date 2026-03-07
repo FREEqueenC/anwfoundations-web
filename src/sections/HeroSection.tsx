@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Droplets, Zap, Building2 } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);
