@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 function AnimatedCounter({ end, suffix = '', duration = 2 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
   const counterRef = useRef<HTMLSpanElement>(null);

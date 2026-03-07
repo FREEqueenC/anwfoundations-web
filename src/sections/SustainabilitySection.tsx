@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Droplets, Zap, TrendingUp } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface MetricCardProps {
   icon: React.ReactNode;
   label: string;

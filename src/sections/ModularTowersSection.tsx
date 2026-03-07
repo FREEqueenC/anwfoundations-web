@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Layers, Settings, Cpu } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function ModularTowersSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);

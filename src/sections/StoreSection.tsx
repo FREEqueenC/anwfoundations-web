@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShoppingCart, Star, Truck, Shield, ArrowRight, Check } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface Product {
   id: string;
   name: string;

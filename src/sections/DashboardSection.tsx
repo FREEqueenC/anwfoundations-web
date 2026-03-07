@@ -3,8 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Activity, Bell, BarChart3 } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function DashboardSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);
