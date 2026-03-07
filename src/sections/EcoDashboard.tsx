@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { gsap } from 'gsap';
 import { Droplets, Leaf, Cloud, TrendingUp, X } from 'lucide-react';
 import type { EcoMetrics } from '../services/dataService';
@@ -56,7 +56,7 @@ function AnimatedNumber({ value, duration = 2000 }: { value: string; duration?: 
   return <span ref={numberRef}>{displayValue}</span>;
 }
 
-function MetricCard({ icon, label, value, unit, change, color }: MetricProps) {
+const MetricCard = memo(function MetricCard({ icon, label, value, unit, change, color }: MetricProps) {
   const isPositive = change >= 0;
   
   return (
@@ -78,7 +78,7 @@ function MetricCard({ icon, label, value, unit, change, color }: MetricProps) {
       </div>
     </div>
   );
-}
+});
 
 function MiniChart({ color }: { color: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -177,7 +177,7 @@ export default function EcoDashboard({ metrics }: EcoDashboardProps) {
   }, [isVisible]);
 
   // Use real metrics if available, otherwise fallback to defaults
-  const displayMetrics = metrics ? [
+  const displayMetrics = useMemo(() => metrics ? [
     {
       icon: <Droplets className="w-5 h-5" />,
       label: 'Water Saved',
@@ -244,7 +244,7 @@ export default function EcoDashboard({ metrics }: EcoDashboardProps) {
       change: 12,
       color: '#F59E0B',
     },
-  ];
+  ], [metrics]);
 
   const lastUpdated = metrics?.lastUpdated 
     ? new Date(metrics.lastUpdated).toLocaleTimeString() 
