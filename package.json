@@ -9,7 +9,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -86,6 +85,5 @@
     "vitest": "^3.0.7",
     "@vitest/ui": "^3.0.7",
     "gh-pages": "^6.3.0"
-    "vitest": "^4.0.18"
   }
 }
