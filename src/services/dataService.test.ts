@@ -63,4 +63,32 @@ describe('DataService', () => {
       randomSpy.mockRestore();
     });
   });
+
+  describe('getProductAvailability', () => {
+    it('should return correct status for an existing product with high stock', async () => {
+      const result = await dataService.getProductAvailability('home-kit-starter');
+
+      expect(result).toEqual({
+        inStock: true,
+        stockLevel: 45,
+        estimatedRestock: undefined,
+      });
+    });
+
+    it('should return correct status for a non-existent product', async () => {
+      const result = await dataService.getProductAvailability('non-existent-id');
+
+      expect(result).toEqual({
+        inStock: false,
+        stockLevel: 0,
+        estimatedRestock: '3-5 days',
+      });
+    });
+
+    it('should return inStock: true for products with stock > 10', async () => {
+      // home-kit-pro has stock 23
+      const result = await dataService.getProductAvailability('home-kit-pro');
+      expect(result.inStock).toBe(true);
+    });
+  });
 });
