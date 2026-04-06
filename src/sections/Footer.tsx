@@ -27,7 +27,11 @@ export default function Footer({ onShowPrivacy, onShowTerms, onShowShipping }: F
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
           {/* Logo and tagline */}
           <div>
-            <a href="https://anwfoundations.com" className="flex items-center gap-2 group mb-4">
+            <a
+              href="https://anwfoundations.com"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 group mb-4"
+            >
               <div className="w-10 h-10 rounded-xl bg-[#7B3FF2] flex items-center justify-center group-hover:glow-purple transition-all duration-300">
                 <Building2 className="w-6 h-6 text-white" />
               </div>
